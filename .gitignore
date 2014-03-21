@@ -1,0 +1,4 @@
+# temp, swap files
+*.sass-cache/*
+*.swo
+*.swp

@@ -1,0 +1,62 @@
+body
+  background-color: #262626
+  font-family: 'PT Sans', sans-serif
+  color: #EEE
+
+h1, h2, h3
+  font-weight: 400
+
+.container
+  width: 100%
+  padding: 20px
+  box-sizing: border-box
+
+//////////////////////////
+#treemap
+  height: 540px
+.date-label
+  width: 180px
+  display: inline-block
+  vertical-align: top
+.play-pause
+  cursor: pointer
+  line-height: 58px
+  &:hover
+    color: rgb(153, 205, 226)
+.sector-name
+  display: inline-block
+  float: right
+#date-slider
+  width: 300px
+  margin: 20px 30px
+  display: inline-block
+  vertical-align: top
+  text
+    fill: #EEE
+.sector-cell
+  position: absolute
+  color: #333
+  font-size: 12px
+  line-height: 13px
+  border: solid 1px #333
+  word-wrap: break-word
+  cursor: pointer
+.slider .handle
+  fill: #fff
+  stroke: #000
+  stroke-opacity: .5
+  stroke-width: 1.25px
+  pointer-events: none
+ 
+/////////////////////
+#price-graph
+  width: 96%
+  height: 540px
+  box-sizing: border-box
+#extremes-table
+  margin: 20px
+  thead
+    td
+      border-bottom: 1px solid #555
+  td
+    padding: 5px 10px

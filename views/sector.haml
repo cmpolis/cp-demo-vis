@@ -1,0 +1,25 @@
+!!!
+%html
+  %head
+    %title HighCharts Example for Karl Clauson
+    %script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.js')
+    %script(src='//cdnjs.cloudflare.com/ajax/libs/highstock/1.3.7/highstock.js')
+    %script(src='/js/sector_hc.js')
+    %link(href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic' rel='stylesheet' type='text/css')
+    %link(rel='stylesheet' type='text/css' href='/css/style.css')
+    
+  %body
+    %h1 Historical Price Data for <select multiple id='sector-select'></select>, Chris Polis
+    Zoom on month: <select id='month-select'></select>
+    #price-graph
+    %table#extremes-table
+      %thead
+        %tr
+          %td Sector
+          %td Max Change
+          %td Max Value
+          %td Max Date
+          %td Min Change
+          %td Min Value
+          %td Min Date
+      %tbody

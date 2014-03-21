@@ -1,0 +1,22 @@
+!!!
+%html
+  %head
+    %title Treemap Example for Karl Clauson
+    %script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.js')
+    %script(src='//cdnjs.cloudflare.com/ajax/libs/d3/3.4.2/d3.js')
+    %script(src='/js/d3.slider.js')
+    %script(src='/js/queue.v1.min.js')
+    %script(src='/js/sector_map.js')
+    %link(href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic' rel='stylesheet' type='text/css')
+    %link(rel='stylesheet' type='text/css' href='/css/style.css')
+    %link(rel='stylesheet' type='text/css' href='/css/d3.slider.css')
+    
+  %body
+    .container
+      %h1 Sector Weights by Date, Chris Polis
+
+      %h3.date-label
+      #date-slider
+      %a.play-pause Play
+      %h3.sector-name Subsectors
+      #treemap
