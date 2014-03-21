@@ -61,11 +61,14 @@ loadPriceData = (sectors) =>
       buildGraph(series) if series.length == sectors.length
 
     else
-      prices = $.getJSON "/sector/#{sector}/prices.json", (priceData) ->
-        newSeries = { name: decodeURIComponent(sector), data: priceData }
-        seriesCache[sector] = newSeries
-        series.push newSeries
-        buildGraph(series) if series.length == sectors.length
+      (() ->
+        s = sector
+        $.getJSON "/sector/#{s}/prices.json", (priceData) ->
+          newSeries = { name: decodeURIComponent(s), data: priceData }
+          seriesCache[s] = newSeries
+          series.push newSeries
+          buildGraph(series) if series.length == sectors.length
+      )()
 
 #
 buildExtremesTable = (evt) =>
@@ -75,7 +78,6 @@ buildExtremesTable = (evt) =>
   for sd in sectorData
     maxData = sd.data.filter((d) -> d.change == sd.dataMax)[0]
     minData = sd.data.filter((d) -> d.change == sd.dataMin)[0]
-    console.log maxData
     tbody.append "
       <tr style='color:#{sd.color}'>
         <td>#{sd.name}</td>
@@ -86,8 +88,6 @@ buildExtremesTable = (evt) =>
         <td>#{minData.y.toFixed(2)}</td>
         <td>#{new Date(minData.x + estFix).toDateString()}</td>
       </tr>"
-    
-    # console.log new Date(sd.data.filter((d) -> d.change == sd.dataMax)[0].x + estFix).toDateString()
 
 #
 buildGraph = (series) =>
