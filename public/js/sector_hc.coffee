@@ -79,10 +79,10 @@ buildExtremesTable = (evt) =>
     tbody.append "
       <tr style='color:#{sd.color}'>
         <td>#{sd.name}</td>
-        <td>#{if maxData.change > 0 then '+' else ''}#{maxData.change.toFixed(3)}</td>
+        <td>#{if maxData.change > 0 then '+' else ''}#{maxData.change.toFixed(3)}%</td>
         <td>#{maxData.y.toFixed(2)}</td>
         <td>#{new Date(maxData.x + estFix).toDateString()}</td>
-        <td>#{if minData.change > 0 then '+' else ''}#{minData.change.toFixed(3)}</td>
+        <td>#{if minData.change > 0 then '+' else ''}#{minData.change.toFixed(3)}%</td>
         <td>#{minData.y.toFixed(2)}</td>
         <td>#{new Date(minData.x + estFix).toDateString()}</td>
       </tr>"
